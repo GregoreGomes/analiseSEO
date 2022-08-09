@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <title>Dados SEO</title>
+</head>
+
+<body>
+    <!-- FIRST STEP (SEARCH) -->
+    <div class="container">
+        <h1 class="tituloPage">SEO Analyzer</h1>
+
+        <h3>Se você está com problemas em conseguir mais acessos em seu site, o resultado pode encontrar aqui, de forma <strong>GRATUITA</strong>!</h3>
+
+        <form class="form">
+            <div class="input-container">
+                <p class="tituloInput">URL</p>
+                <input id="site" class="input url" type="text" name="site" placeholder="https://www.site.com" />
+            </div>
+            <div class="input-container">
+                <p class="tituloInput">Palavra chave</p>
+                <input id="palavra_chave" class="input palavra-chave" type="text" name="palavra" placeholder="Palavra, palavra, palavra" />
+            </div>
+            <button type="text" class="enviar">
+                <span><a>VALIDAR</a></span>
+            </button>
+        </form>
+    </div>
+    
+    <!-- LOADER -->
+    <div class="preload" id="loader">
+        <div class="align">
+            <div class="bg"></div>
+        </div>
+    </div>
+    
+    <!-- LAST STEP (RESULT) -->
+    <div class="" id="last-step">
+        <h1>Análise de dados SEO</h1>
+        <div class="my-progress-bar"></div>
+        <div class="palavrasChaves"></div>
+        <div class="align-text-return"></div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/plugin.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        const loaderElement = document.getElementById('loader');
+        const form = document.querySelector(".form");
+        
+        form.addEventListener("submit", submitForm)
+        
+        const ADD_URL = "http://localhost:3000/add";
+        
+        function submitForm(e) {
+            e.preventDefault()
+            e.stopPropagation()
+            
+            const urlValue = event.target.elements.site.value
+            const searchKeyword = event.target.elements.palavra_chave.value
+            const bodyValue = JSON.stringify({
+                site: urlValue,
+                palavra: searchKeyword
+            })
+            
+            fetch(ADD_URL, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json'
+                },
+                body: bodyValue
+            }).then((resp) => {
+                if (resp.status == 200) {
+                    loaderElement.style.display = 'block';
+                    form.style.display = 'none';
+                    printAddress();
+                } else {
+                    alert('Dados faltantes, ou tente novamente.')
+                }
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+    </script>
+    
+</body>
+
+</html>

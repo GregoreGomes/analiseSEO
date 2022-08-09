@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+  font-weight: bold;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 20%;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.tituloPage{
+  padding-bottom: 5%;
+}
+
+.circular-progress-bar {
+  position: relative;
+  margin: 0 auto;
+  transform: rotate(-90deg);
+  border-radius: 50%;
+}
+
+.progress-percentage, .progress-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  text-align: center;
+}
+
+.progress-percentage {
+  font-size: 40px;
+}
+
+.progress-text {
+  left: 35%;
+  color: #585858;
+  font-size: 21px;
+}
+
+.align-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  padding: 20px 15%;
+  text-align: center;
+}
+
+.preload {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: absolute;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg {
+  animation: rotating 1s infinite;
+  border: 6px solid #e5e5e5;
+  border-radius: 50%;
+  border-top-color: #f9ec31;
+  height: 100px;
+  width: 100px;
+}
+
+.align {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin-left: 15px;
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding-top: 30px;
+}
+
+input {
+  border: 0;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f9ec31;
+}
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border-bottom: 1px solid #f9ec31;
+  outline: 0;
+  background-color: transparent;
+} 
+
+p {
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+#loader {
+  display: none;
+}
+
+#last-step {
+  display: none;
+}
+
+.form{
+  display: flex;
+  align-items: center;
+  padding-top: 5%;
+}
+
+
+@keyframes error {
+  0% {
+    transform: translateX(0);
+  }
+  
+  25% {
+    transform: translateX(10px);
+  }
+  
+  50% {
+    transform: translateX(-7px);
+  }
+  
+  75% {
+    transform: translateX(3px);
+  }
+  
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotating {
+  to {
+    transform: rotate(360deg);
+  }
+}
