@@ -8,7 +8,7 @@ const lastStepContainer = document.querySelector('#last-step');
 const loaderStep = document.querySelector('#loader');
 
 const VALIDACAO_URL =
-'https://analise-seo-back.digitalbusiness.com.br/validacao';
+'http://localhost:3000/validacao';
 
 // valida titulo, mat tag description, h1 e h2
 
@@ -35,7 +35,7 @@ const printAddress = async() => {
 // valida se ha erros no html
 
 const VERIFY_IF_IS_A_VALID_URL =
-'https://analise-seo-back.digitalbusiness.com.br/respostaW3';
+'http://localhost:3000/respostaW3';
 
 const addressValidator = () =>
     fetch(VERIFY_IF_IS_A_VALID_URL)

@@ -13,6 +13,7 @@
   text-align: center;
   flex-wrap: wrap;
 }
+
 .tituloPage{
   padding-bottom: 5%;
 }
@@ -93,14 +94,15 @@
 
 button {
   background-color: transparent;
+  border: 1px solid #f9ec31;
   cursor: pointer;
-  border: none;
-  padding-top: 30px;
+  width: 90px;
+  height: 25px;
+  border-radius: 20px;
 }
 
 input {
   border: 0;
-  margin-left: 25px;
   margin-bottom: 10px;
   border-bottom: 1px solid #f9ec31;
 }
@@ -111,10 +113,7 @@ textarea:focus, input:focus, select:focus {
   background-color: transparent;
 } 
 
-p {
-  margin-left: 25px;
-  margin-bottom: 10px;
-}
+
 
 #loader {
   display: none;
@@ -127,9 +126,20 @@ p {
 .form{
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-top: 5%;
+  flex-wrap: wrap;
+}
+.form .input-container{
+  width: 100%;
+  padding: 3%;
 }
 
+.form .enviar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @keyframes error {
   0% {
