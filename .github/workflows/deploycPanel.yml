@@ -10,8 +10,17 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
+
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run start
       
-    
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
@@ -19,5 +28,3 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         username: ${{ secrets.FTP_USERNAME }}
         server-dir: public_html/aplicacao/
-        protocol: ftps
-        port: 3000 # todo replace with your web hosts ftps port
