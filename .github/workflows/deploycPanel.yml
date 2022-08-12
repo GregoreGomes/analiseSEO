@@ -17,4 +17,4 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         password: ${{ secrets.FTP_PASSWORD }}
         username: ${{ secrets.FTP_USERNAME }}
-        server-dir: public_html/testingseo.net/
+        server-dir: public_html/aplicacao
