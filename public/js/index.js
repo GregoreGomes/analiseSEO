@@ -105,7 +105,7 @@ function hasHeadingTags(array) {
     });
 
     if (array.h2Tag != '') {
-        templateText('align-text', `h2: "${array.h2Tag}" não contém as palavras chaves.`);
+        templateText('align-text', `Não contém as palavras chaves no h2.`);
     }
 
     arrayPalavraChave.forEach(e => {
@@ -117,7 +117,7 @@ function hasHeadingTags(array) {
     });
 
     if (array.h1Tag != '') {
-        templateText('align-text', `h1: "${array.h1Tag}" não contém as palavras chaves.`);
+        templateText('align-text', `Não contém as palavras chaves no h1.`);
     }
 }
 
@@ -140,7 +140,7 @@ function contCharacter(array) {
     }
 
     if (array.title.includes(array.palavraChave)) {
-        templateText('align-text', `Não contém palavras chave no título: "${array.title}".`);
+        templateText('align-text', `Não contém palavras chave no título.`);
     }
 
     if (charactersTitle) {
@@ -166,7 +166,7 @@ function contCharacter(array) {
         }
 
         if (array.metaTagDescription != '') {
-            templateText('align-text', `Não contém palavras chaves na meta tag: "${array.metaTagDescription}".`);
+            templateText('align-text', `Não contém as palavras chave pesquisadas`);
         }
     }
 }
